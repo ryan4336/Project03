@@ -64,6 +64,12 @@ public class MidiEventData {
 	public void setInstrument(int instrument) {
 		this.instrument = instrument;
 	}
+
+	@Override
+	public String toString() {
+		return "MidiEventData [channel=" + channel + ", note=" + note + ", startTick=" + startTick + ", endTick="
+				+ endTick + ", velocity=" + velocity + ", instrument=" + instrument + "]";
+	}
 	
 	
 }
