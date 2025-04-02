@@ -1,28 +1,31 @@
 package project03.MidiData;
 
 public class MidiEventData {
-	private int channel;
-	private int note;
-	private int startTick;
-	private int endTick;
-	private int velocity;
-	private int instrument;
-	
-	public MidiEventData(int channel, int note, int startTick, int endTick, int velocity, int instrument) {
-		this.channel = channel;
-		this.note = note;
-		this.startTick = startTick;
-		this.endTick = endTick;
+	private int startEndTick, velocity, note, channel, noteOnOff, instrument;
+
+	public MidiEventData(int startEndTick, int velocity, int note, int channel, int noteOnOff, int instrument) {
+		this.startEndTick = startEndTick;
 		this.velocity = velocity;
+		this.note = note;
+		this.channel = channel;
+		this.noteOnOff = noteOnOff;
 		this.instrument = instrument;
 	}
 
-	public int getChannel() {
-		return channel;
+	public int getStartEndTick() {
+		return startEndTick;
 	}
 
-	public void setChannel(int channel) {
-		this.channel = channel;
+	public void setStartEndTick(int startEndTick) {
+		this.startEndTick = startEndTick;
+	}
+
+	public int getVelocity() {
+		return velocity;
+	}
+
+	public void setVelocity(int velocity) {
+		this.velocity = velocity;
 	}
 
 	public int getNote() {
@@ -33,28 +36,20 @@ public class MidiEventData {
 		this.note = note;
 	}
 
-	public int getStartTick() {
-		return startTick;
+	public int getChannel() {
+		return channel;
 	}
 
-	public void setStartTick(int startTick) {
-		this.startTick = startTick;
+	public void setChannel(int channel) {
+		this.channel = channel;
 	}
 
-	public int getEndTick() {
-		return endTick;
+	public int getNoteOnOff() {
+		return noteOnOff;
 	}
 
-	public void setEndTick(int endTick) {
-		this.endTick = endTick;
-	}
-
-	public int getVelocity() {
-		return velocity;
-	}
-
-	public void setVelocity(int velocity) {
-		this.velocity = velocity;
+	public void setNoteOnOff(int noteOnOff) {
+		this.noteOnOff = noteOnOff;
 	}
 
 	public int getInstrument() {
@@ -67,9 +62,11 @@ public class MidiEventData {
 
 	@Override
 	public String toString() {
-		return "MidiEventData [channel=" + channel + ", note=" + note + ", startTick=" + startTick + ", endTick="
-				+ endTick + ", velocity=" + velocity + ", instrument=" + instrument + "]";
+		return "MidiEventData [startEndTick=" + startEndTick + ", velocity=" + velocity + ", note=" + note
+				+ ", channel=" + channel + ", noteOnOff=" + noteOnOff + ", instrument=" + instrument + "]";
 	}
+	
+	
 	
 	
 }
