@@ -5,8 +5,17 @@ import java.util.List;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-
+/**
+ * This class provides functionality to parse a CSV file containing MIDI event data
+ * and convert it into a list of MidiEventData objects.
+ */
 public class MidiCsvParser {
+	/**
+     * Parses a CSV file containing MIDI event data and returns a list of MidiEventData objects.
+     *
+     * @param filePath The path to the CSV file to be parsed.
+     * @return A list of MidiEventData objects representing MIDI events.
+     */
     public static List<MidiEventData> parseCsv(String filePath) {
         List<MidiEventData> events = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
