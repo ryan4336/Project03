@@ -9,6 +9,9 @@ import javax.sound.midi.ShortMessage;
  * without modifications for note duration, pitch, or other special effects.
  */
 public class StandardMidiEventFactory implements MidiEventFactory{
+	/**
+     * Protected constructor to prevent direct instantiation.
+     */
 	protected StandardMidiEventFactory() {
 		
 	}

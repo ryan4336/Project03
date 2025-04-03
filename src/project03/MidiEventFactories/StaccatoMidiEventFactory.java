@@ -9,6 +9,9 @@ import javax.sound.midi.ShortMessage;
  * This factory adjusts the timing of note events to produce a staccato effect.
  */
 public class StaccatoMidiEventFactory implements MidiEventFactory{
+	/**
+     * Protected constructor to prevent direct instantiation.
+     */
 	protected StaccatoMidiEventFactory() {
 			
 		}
