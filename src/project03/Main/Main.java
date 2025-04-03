@@ -2,23 +2,28 @@ package project03.Main;
 import java.util.List;
 
 import javax.sound.midi.InvalidMidiDataException;
-import javax.sound.midi.MidiEvent;
 import javax.sound.midi.MidiSystem;
 import javax.sound.midi.Sequence;
 import javax.sound.midi.Sequencer;
-import javax.sound.midi.ShortMessage;
 import javax.sound.midi.Track;
-
 import project03.MidiData.MidiCsvParser;
 import project03.MidiData.MidiEventData;
 import project03.MidiEventFactories.*;
 import project03.PitchStrategy.*;
 import project03.InstrumentStrategy.*;
-
+/**
+ * Main class to demonstrate the playback of MIDI events using different strategies for instrument selection and pitch modification.
+ * It parses MIDI data from a CSV file, applies chosen strategies, and plays the sequence of MIDI events using a Sequencer.
+ */
 public class Main {
-
-	public static void main(String[] args) throws InvalidMidiDataException {
-		
+	/**
+     * Main method to set up and play MIDI events.
+     * 
+     * @param args Command-line arguments.
+     * @throws InvalidMidiDataException If there is an error while creating MIDI events.
+     */
+	public static void main(String[] args) {
+		System.out.println("Currently Playing: 'bad guy' by Billie Eilish");
 		try {
 			List<MidiEventData> midiEvents = MidiCsvParser.parseCsv("src/project03/Files/mystery_song.csv");
             Sequence sequence = new Sequence(Sequence.PPQ, 384);
@@ -68,6 +73,7 @@ public class Main {
 		catch (Exception e){
 			e.printStackTrace();
 		}
+		System.out.println("Finished!");
 	}
 
 }
